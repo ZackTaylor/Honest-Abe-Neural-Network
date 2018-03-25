@@ -1,0 +1,23 @@
+{
+  "name": "lincoln",
+  "version": "1.0.0",
+  "description": "A neural network that determines if a tweet is form #democrat or #republican.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZackTaylor/Lincoln.git"
+  },
+  "author": "Zack Taylor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZackTaylor/Lincoln/issues"
+  },
+  "homepage": "https://github.com/ZackTaylor/Lincoln#readme",
+  "dependencies": {
+    "brain.js": "^1.1.2",
+    "twitter": "^1.7.1"
+  }
+}
