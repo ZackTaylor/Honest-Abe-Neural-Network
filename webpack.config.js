@@ -1,10 +1,12 @@
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: [
     'react-hot-loader/patch',
     './app/index.js'
   ],
+  target: 'node',
   module: {
     rules: [
       {
@@ -23,7 +25,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new Dotenv()
   ],
   devServer: {
     contentBase: './dist',
