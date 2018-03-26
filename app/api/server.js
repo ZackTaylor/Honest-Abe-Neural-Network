@@ -1,14 +1,11 @@
-var express = require('express');
-var app = express();
-var port = 8080;
+import express from 'express';
+import webpack from 'webpack';
+import webpackMiddleware from 'webpack-dev-middleware';
+import webpackConfig from '../../webpack.config.js';
 
-// start the server
-app.listen(port, function() {
-  console.log('app started');
-});
+const app = express();
+app.use(webpackMiddleware(webpack(webpackConfig)));
 
-// route our app
-app.get('/', function(req, res) {
-  
-  res.send('hello world!');
+app.listen(3000, () => {
+  console.log('Listening');
 });

@@ -1,9 +1,10 @@
-const webpack = require('webpack');
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import LiveReloadPlugin from 'webpack-livereload-plugin';
 
-module.exports = {
+export default {
   entry: [
-    'react-hot-loader/patch',
-    './app/index.js'
+    './app/web/index.js'
   ],
   module: {
     rules: [
@@ -11,6 +12,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        use: ['style-loader', 'css-loader'],
+        test: /\.css$/
       }
     ]
   },
@@ -23,7 +28,10 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new HtmlWebpackPlugin({
+      template: 'dist/index.html'
+    }),
+    new LiveReloadPlugin()
   ],
   devServer: {
     contentBase: './dist',
