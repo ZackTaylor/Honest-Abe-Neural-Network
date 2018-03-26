@@ -1,4 +1,5 @@
 import Twitter from "twitter";
+require('dotenv-safe').config();
 
 const client = new Twitter({
   consumer_key: process.env.CONSUMER_KEY,
@@ -9,12 +10,10 @@ const client = new Twitter({
 
 export default class TwitterService {
 
-  static getTweetsByHashtag(hashtag) {
-    client.get("search/tweets", {q: hashtag}, (err, tweet, response) => {
-      console.log(err);
-      console.log(tweet);
-      console.log(response);
+  static async getTweetsByHashtag(hashtag) {
+    await client.get("search/tweets", {q: hashtag}, (err, tweets, response) => {
+      // TODO: add logic to train Brain.js
+      console.log(tweets);
     });
   }
-
 }
