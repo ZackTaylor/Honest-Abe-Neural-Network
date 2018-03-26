@@ -6,7 +6,11 @@ module.exports = {
     'react-hot-loader/patch',
     './app/index.js'
   ],
-  target: 'node',
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
   module: {
     rules: [
       {

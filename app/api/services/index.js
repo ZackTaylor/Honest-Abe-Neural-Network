@@ -1,5 +1,5 @@
 import TwitterService from "./TwitterService";
-//
-// module.exports = {
-//   TwitterService
-// }
+
+module.exports = {
+  TwitterService
+};
