@@ -4,7 +4,7 @@
   "description": "A neural network that determines if a tweet is form #democrat or #republican.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node ./app/api/server.js  --ignore client",
+    "start": "nodemon --exec babel-node ./app/api/server.js  --ignore client --open --watch --progress --colors",
     "test": "test"
   },
   "repository": {
@@ -20,6 +20,7 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "brain.js": "^1.1.2",
+    "dotenv-safe": "^5.0.1",
     "dotenv-webpack": "^1.5.5",
     "express": "^4.16.3",
     "nodemon": "^1.17.2",
