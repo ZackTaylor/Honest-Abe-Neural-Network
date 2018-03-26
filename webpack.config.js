@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import LiveReloadPlugin from 'webpack-livereload-plugin';
+const Dotenv = require('dotenv-webpack');
 
 export default {
   entry: [
@@ -28,6 +29,12 @@ export default {
     filename: 'bundle.js'
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        TEST: 'test',
+      },
+    }),
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: 'dist/index.html'
     }),
@@ -38,3 +45,4 @@ export default {
     hot: true
   }
 };
+
